@@ -256,7 +256,12 @@ class ExhibitRoute:
 
     def count_stops(self) -> int:
         """Return the number of stops in the route."""
-        return len(self.list_stops())
+        total = 0
+        current = self.head
+        while current is not None:
+            total += 1
+            current = current.next
+        return total
 
 
 def count_artifacts_by_category(artifacts: list[Artifact]) -> dict[str, int]:
@@ -300,12 +305,12 @@ def demo_museum_night() -> None:
     print("Moonlight Museum Demo Running")
 
     artifacts = [
-        Artifact(1, "Mirror", "Cursed", 100, "A1"),
-        Artifact(2, "Clock Bird", "Clockwork", 50, "B1"),
-        Artifact(3, "Whisper Map", "Magic", 75, "C1"),
         Artifact(4, "Golden Key", "Rare", 200, "A2"),
-        Artifact(5, "Silver Mask", "Ancient", 300, "D1"),
+        Artifact(2, "Clock Bird", "Clockwork", 50, "B1"),
         Artifact(6, "Ghost Lamp", "Haunted", 90, "E1"),
+        Artifact(1, "Mirror", "Cursed", 100, "A1"),
+        Artifact(3, "Whisper Map", "Magic", 75, "C1"),
+        Artifact(5, "Silver Mask", "Ancient", 300, "D1"),
         Artifact(7, "Moon Stone", "Rare", 500, "F1"),
         Artifact(8, "Shadow Ring", "Magic", 150, "G1"),
     ]
