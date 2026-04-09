@@ -1,157 +1,75 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/tfm_-hwX)
-# Project 2: Moonlight Museum After Dark
+# Moonlight Museum After Dark
 
-## Team information
-- Team name:
-- Members:
-- Repository name:
-
----
-
-## Project summary
-Write 2-4 sentences explaining what your museum system does.
-
-Example starters:
-- Our project builds a system for organizing strange museum artifacts after dark.
-- The system uses multiple data structures to manage artifacts, requests, routes, and reports.
+## 1. Team Information
+- Team Name: Moonlight Coders
+- Member 1: Bobby Nepali
+- Worked individually (solo project)
 
 ---
 
-## Feature checklist
-Mark each item when it is working.
-
-### Core structures
-- [ ] `Artifact` class/record
-- [ ] `ArtifactBST`
-- [ ] `RestorationQueue`
-- [ ] `ArchiveUndoStack`
-- [ ] `ExhibitRoute` singly linked list
-
-### BST features
-- [ ] insert artifact
-- [ ] search by ID
-- [ ] preorder traversal
-- [ ] inorder traversal
-- [ ] postorder traversal
-- [ ] duplicate IDs ignored
-
-### Queue features
-- [ ] add request
-- [ ] process next request
-- [ ] peek next request
-- [ ] empty check
-- [ ] size
-
-### Stack features
-- [ ] push action
-- [ ] undo last action
-- [ ] peek last action
-- [ ] empty check
-- [ ] size
-
-### Linked list features
-- [ ] add stop to end
-- [ ] remove first matching stop
-- [ ] list stops in order
-- [ ] count stops
-
-### Utility/report features
-- [ ] category counts
-- [ ] unique rooms
-- [ ] sort by age
-- [ ] linear search by name
-
-### Integration
-- [ ] `demo_museum_night()`
-- [ ] at least 8 artifacts in demo
-- [ ] demo shows system parts working together
+## 2. Short Project Summary
+This project creates a museum management system for the Moonlight Museum’s late-night exhibition.  
+The system organizes strange artifacts using a Binary Search Tree (BST), manages restoration requests with a queue, tracks undo actions with a stack, builds exhibit routes using a linked list, and generates reports with helper utility functions.
 
 ---
 
-## Design note (150-250 words)
-Explain your main design choices.
-
-Things to include:
-- Why a BST makes sense for artifact IDs
-- Why a queue fits restoration requests
-- Why a stack fits undo actions
-- Why a linked list fits an exhibit route
-- How your system is organized across classes and functions
-
-Write your note here:
-
----
-
-## Complexity reasoning
-Write short, specific explanations.
-
-### Example format
-- `ArtifactBST.search_by_id`: `O(h)` where `h` is the tree height, because the search follows one path from the root down.
-- `RestorationQueue.process_next_request`: `O(1)` because deque removal from the front is constant time.
-
-### Your required entries
-- `ArtifactBST.insert`:
-- `ArtifactBST.search_by_id`:
-- `ArtifactBST.inorder_ids`:
-- `RestorationQueue.process_next_request`:
-- `ArchiveUndoStack.undo_last_action`:
-- `ExhibitRoute.remove_stop`:
-- `sort_artifacts_by_age`:
-- `linear_search_by_name`:
+## 3. Feature Checklist
+- [x] Artifact archive BST
+- [x] Insert artifact
+- [x] Search artifact by ID
+- [x] Inorder traversal
+- [x] Preorder traversal
+- [x] Postorder traversal
+- [x] Duplicate ID handling
+- [x] Restoration request queue
+- [x] Archive undo stack
+- [x] Exhibit route linked list
+- [x] Category counting
+- [x] Unique rooms finder
+- [x] Sort artifacts by age
+- [x] Linear search by name
+- [x] Integration demo function
 
 ---
 
-## Edge-case checklist
-Explain how your code handles each case.
-
-### BST
-- [ ] insert into empty tree
-- [ ] search for missing ID
-- [ ] empty traversals
-- [ ] duplicate ID
-
-### Queue
-- [ ] process empty queue
-- [ ] peek empty queue
-
-### Stack
-- [ ] undo empty stack
-- [ ] peek empty stack
-
-### Exhibit route linked list
-- [ ] empty route
-- [ ] remove missing stop
-- [ ] remove first stop
-- [ ] remove middle stop
-- [ ] remove last stop
-- [ ] one-stop route
-
-### Reports
-- [ ] empty artifact list
-- [ ] repeated categories
-- [ ] repeated rooms
-- [ ] missing artifact name
-- [ ] same-age artifacts
+## 4. Design Note
+This project uses different data structures based on their strengths. The Binary Search Tree is used for artifact storage because it allows efficient searching and ordered traversal by artifact ID. The queue is used for restoration requests because requests must be processed in FIFO order. The stack is used for undo actions because the most recent action should be undone first. The singly linked list is used for exhibit routes because stops are added in sequence and can be removed easily. Dictionaries and sets are used in helper functions for counting categories and tracking unique rooms efficiently. These choices make the museum system organized, efficient, and easy to maintain.
 
 ---
 
-## Demo plan / how to run
-Explain how someone should run your project.
+## 5. Complexity Reasoning
+- BST Insert/Search: O(log n) average, O(n) worst case
+- BST Traversals: O(n)
+- Queue Add/Process: O(1)
+- Stack Push/Pop: O(1)
+- Linked List Add: O(n)
+- Linked List Remove: O(n)
+- Category Count: O(n)
+- Unique Rooms: O(n)
+- Sort by Age: O(n log n)
+- Linear Search by Name: O(n)
 
-Example:
+---
+
+## 6. Edge-Case Checklist
+- [x] Empty BST insert
+- [x] Duplicate BST ID ignored
+- [x] Search missing artifact
+- [x] Empty queue process
+- [x] Empty queue peek
+- [x] Empty stack undo
+- [x] Empty stack peek
+- [x] Empty linked list remove
+- [x] Remove first node
+- [x] Remove middle node
+- [x] Remove last node
+- [x] Missing stop removal
+- [x] Empty artifact helper functions
+
+---
+
+## 7. Demo Plan / How to Run
+
+Run project demo:
 ```bash
-pytest -q
-python -c "from src.project import demo_museum_night; demo_museum_night()"
-```
-
-Write your steps here:
-
----
-
-## Assistance & sources
-This section is required.
-
-- AI used? (Y/N)
-- What it helped with:
-- Non-course sources used:
-- Links:
+python src/project.py
