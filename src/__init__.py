@@ -1,0 +1,1 @@
+"""Moonlight Museum project package."""
