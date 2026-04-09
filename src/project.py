@@ -253,3 +253,6 @@ def demo_museum_night():
 
     print(count_artifacts_by_category(artifacts))
     print(unique_rooms(artifacts))
+
+if __name__ == "__main__":
+    demo_museum_night()
